@@ -25,7 +25,9 @@
     <?php 
     // echo validation_errors();
     // You can show the erros with the first parameter is the name of the input you want to show the error and second is the style the error with the delimeters
-    echo form_error('username','<div style="color:red;">','</div>');
+    // echo form_error('username','<div style="color:red;">','</div>');
+
+    echo form_error('username');
     echo form_error('password');
     
     ?>
