@@ -27,7 +27,7 @@
                 echo "Form validate successful";
             }
             else{
-                echo "Form validate failed";
+                $this->load->view('users/articles');
             }
           
 
