@@ -11,12 +11,11 @@
 <body>
     <h2>This is the users article page</h2>
     <!-- The above line the html form tag with its argument is the action path -->
-    <?php echo form_open('users/index')?> 
+    <?php echo form_open('users/abhi')?> 
 
     <!-- The above line render the html input tag with the argument is the associtive array with the key is the attrubute and the value is the its value -->
-    <?php echo form_input(['class'=>'form-input','placeholder'=>'Enter the Name'])?> 
-    <?php echo form_input(['class'=>'form-input','placeholder'=>'Enter the Email'])?> 
-    <?php echo form_password(['class'=>'form-input','placeholder'=>'Enter the Password'])?> 
+    <?php echo form_input(['class'=>'form-input','placeholder'=>'Enter the Name','name'=>'username'])?> 
+    <?php echo form_password(['class'=>'form-input','placeholder'=>'Enter the Password','name'=>'password'])?> 
 
     <?php echo form_submit(['class'=>'submit','value'=>'Submit'])?>
 
