@@ -14,7 +14,8 @@
     <?php echo form_open('users/abhi')?> 
 
     <!-- The above line render the html input tag with the argument is the associtive array with the key is the attrubute and the value is the its value -->
-    <?php echo form_input(['class'=>'form-input','placeholder'=>'Enter the Name','name'=>'username'])?> 
+    <!-- Added the set_value function in the value key -->
+    <?php echo form_input(['class'=>'form-input','placeholder'=>'Enter the Name','name'=>'username','value'=>set_value('username')])?> 
     <?php echo form_password(['class'=>'form-input','placeholder'=>'Enter the Password','name'=>'password'])?> 
 
     <?php echo form_submit(['class'=>'submit','value'=>'Submit'])?>
