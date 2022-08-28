@@ -35,7 +35,9 @@ $config['base_url'] = '';
 | variable so that it is blank.
 |
 */
-$config['index_page'] = 'index.php';
+// $config['index_page'] = 'index.php';
+// Remove the index.php parameter to completely remove the index.php file in the url when the function is callled when the form is submitted or any another action
+$config['index_page'] = '';
 
 /*
 |--------------------------------------------------------------------------
