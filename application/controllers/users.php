@@ -21,7 +21,7 @@
             // The first argument is the name field of the input tag you can target the field value and second argument is the conventional name for your understanding and third is the rules multiple rules added by the | symbol
 
             $this->form_validation->set_rules('username','User Name','trim|required');
-            $this->form_validation->set_rules('password','Password','trim|required|max_length[12]');
+            $this->form_validation->set_rules('password','Password','trim|required|max_length[12]|min_length[6]');
 
             // This is how you can add the style to the error messages and style it 
             $this->form_validation->set_error_delimiters('<div style = "color:red;">','</div>');
