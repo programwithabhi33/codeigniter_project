@@ -16,7 +16,7 @@
         }
 
         public function abhi(){
-            $this->load->library('form_validation');
+            $this->load->library('form_validation','fv');
 
             // The first argument is the name field of the input tag you can target the field value and second argument is the conventional name for your understanding and third is the rules multiple rules added by the | symbol
 
@@ -27,7 +27,12 @@
             $this->form_validation->set_error_delimiters('<div style = "color:red;">','</div>');
 
             if($this->form_validation->run()){
-                echo "Form validate successful";
+                // echo "Form validate successful";
+
+                // Here Getting the post values
+                $uname = $this->input->post('username');
+                $password = $this->input->post('password');
+                echo "UserName is ".$uname." Password is ".$password;
             }
             else{
                 $this->load->view('users/articles');
