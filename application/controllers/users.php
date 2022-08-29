@@ -1,10 +1,10 @@
 <?php
-    class users extends my_controller {
+    class Users extends MY_controller {
         // When you define this class constructor you have to call the ci_controller constructor to acces the super object 
-        // public function __construct(){
-        //     // parent::__construct();
-        //     // echo "This is the users class constructor";
-        // }
+        public function __construct(){
+            parent::__construct();
+            // echo "This is the users class constructor";
+        }
 
         public function index(){
            
