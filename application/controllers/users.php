@@ -36,7 +36,12 @@
 
                 // Validating the user using the admin_login model validate_user function
                 $this->load->model('loginmodel');
-                $this->loginmodel->validate_user($username,$password);
+                $id = $this->loginmodel->validate_user($username,$password);
+
+                // Storing the returning user id in the session variable
+                $this->load->library('session');
+                $this->session->set_userdata('id',$id);
+                
             }
             else{
                 $this->load->view('users/articles');

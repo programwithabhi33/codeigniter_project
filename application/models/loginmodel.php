@@ -9,12 +9,22 @@
             $this->load->database();
 
             $result = $this->db->where('username',$username)
+            // where(['username'=>$username,'password'=>$password])
                                 ->where('password',$password)
                             ->get('users');
             // echo "<pre>";
-            // print_r($result);
+            // $result->row() returns first matching row in the database
+            // print_r($result->row());
             // SQL_Query = SELECT * FROM 'users' WHERE 'username' = $username , 'password'= $password;
 
+            if($result->num_rows()){
+                // print_r($result->row()->id);
+                // die;
+                return $result->row()->id;
+            }
+            else{
+                return false;
+            }
 
 
             // Model is the core class so you can access the load method in the model
