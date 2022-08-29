@@ -1,10 +1,10 @@
 <?php
     class Users extends MY_controller {
-        // When you define this class constructor you have to call the ci_controller constructor to acces the super object 
-        public function __construct(){
-            parent::__construct();
-            // echo "This is the users class constructor";
-        }
+        // // When you define this class constructor you have to call the ci_controller constructor to acces the super object 
+        // public function __construct(){
+        //     parent::__construct();
+        //     // echo "This is the users class constructor";
+        // }
 
         public function index(){
            
@@ -30,9 +30,13 @@
                 // echo "Form validate successful";
 
                 // Here Getting the post values
-                $uname = $this->input->post('username');
+                $username = $this->input->post('username');
                 $password = $this->input->post('password');
-                echo "UserName is ".$uname." Password is ".$password;
+                // echo "UserName is ".$uname." Password is ".$password;
+
+                // Validating the user using the admin_login model validate_user function
+                $this->load->model('loginmodel');
+                $this->loginmodel->validate_user($username,$password);
             }
             else{
                 $this->load->view('users/articles');
