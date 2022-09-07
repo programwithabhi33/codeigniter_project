@@ -1,4 +1,5 @@
 <?php
+    include_once(APPPATH.'core/AdminController.php');
     class Users extends MY_controller {
         // // When you define this class constructor you have to call the ci_controller constructor to acces the super object 
         // public function __construct(){
@@ -37,11 +38,15 @@
                 // Validating the user using the admin_login model validate_user function
                 $this->load->model('loginmodel');
                 $id = $this->loginmodel->validate_user($username,$password);
+                if($id){
+                    // Storing the returning user id in the session variable
+                    $this->load->library('session');
+                    $this->session->set_userdata('id',$id);
+                }
+                else{
+                    echo "Details Not Matched";
+                }
 
-                // Storing the returning user id in the session variable
-                $this->load->library('session');
-                $this->session->set_userdata('id',$id);
-                
             }
             else{
                 $this->load->view('users/articles');
