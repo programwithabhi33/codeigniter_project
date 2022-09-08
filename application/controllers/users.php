@@ -42,6 +42,7 @@
                     // Storing the returning user id in the session variable
                     $this->load->library('session');
                     $this->session->set_userdata('id',$id);
+                    return redirect('Users/Welcome');
                 }
                 else{
                     echo "Details Not Matched";
@@ -53,6 +54,10 @@
             }
                                
 
+        }
+
+        public function welcome(){
+            $this->load->view('admin/main.php');
         }
     }
 
