@@ -36,6 +36,18 @@
             // print_r($result);
             // die;
         }
+        
+        public function getArticleList(){
+            $this->load->library('session');
+            $id = $this->session->userdata('id');
+            $result = $this->db->select("article_title,article_body")
+                                ->from('articles')
+                                ->where('user_id',$id)
+                                ->get();
+                        print_r($result->result());
+                        die;
+
+        }
     }
 
 ?>

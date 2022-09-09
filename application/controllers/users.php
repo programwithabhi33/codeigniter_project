@@ -57,6 +57,8 @@
         }
 
         public function welcome(){
+            $this->load->model('loginmodel');
+            $this->loginmodel->getArticleList();
             $this->load->view('admin/main.php');
         }
     }
