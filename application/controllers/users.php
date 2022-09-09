@@ -57,9 +57,17 @@
         }
 
         public function welcome(){
+            $this->load->library('session');
+            if(!$this->session->userdata('id')) return redirect('users');
             $this->load->model('loginmodel');
             $articles = $this->loginmodel->getArticleList();
             $this->load->view('users/articleList',['articles'=>$articles]);
+        }
+
+        public function logout(){
+            $this->load->library('session');
+            $this->session->unset_userdata('id');
+            return redirect('users');
         }
     }
 

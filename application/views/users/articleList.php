@@ -26,6 +26,6 @@
         echo "No articles Found"; ?>
     <?php endif; ?>
 
-   
+   <a href="<?=base_url('users/logout')?> ">Logout</a>
 </body>
 </html>
