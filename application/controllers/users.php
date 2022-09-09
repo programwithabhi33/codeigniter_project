@@ -58,8 +58,8 @@
 
         public function welcome(){
             $this->load->model('loginmodel');
-            $this->loginmodel->getArticleList();
-            $this->load->view('admin/main.php');
+            $articles = $this->loginmodel->getArticleList();
+            $this->load->view('users/articleList',['articles'=>$articles]);
         }
     }
 

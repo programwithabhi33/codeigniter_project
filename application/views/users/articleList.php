@@ -8,5 +8,24 @@
 </head>
 <body>
     <h2>This is the article list page</h2>
+    
+    <?php if(count($articles)):?>
+        <table>
+            <tr>
+                <th>Title</th>
+                <th>Description</th>
+            </tr>
+    <?php foreach ($articles as $article) { ?>
+            <tr>
+                <td><?= $article->article_title;?></td>
+                <td><?= $article->article_body;?></td>
+            </tr>
+            <?php }?>
+        </table>
+    <?php  else:
+        echo "No articles Found"; ?>
+    <?php endif; ?>
+
+   
 </body>
 </html>

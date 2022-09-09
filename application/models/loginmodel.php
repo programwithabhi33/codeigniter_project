@@ -44,8 +44,7 @@
                                 ->from('articles')
                                 ->where('user_id',$id)
                                 ->get();
-                        print_r($result->result());
-                        die;
+                        return $result->result();
 
         }
     }
