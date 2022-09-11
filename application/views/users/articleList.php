@@ -26,6 +26,9 @@
         echo "No articles Found"; ?>
     <?php endif; ?>
 
-   <a href="<?=base_url('users/logout')?> ">Logout</a>
+   <!-- <a href="<?=base_url('users/logout')?> ">Logout</a> -->
+   <!-- You can also use the codeigniter anchor function -->
+   <!-- First argument is the url like controller and function and the second is the text show up in inside the anchor tag -->
+   <?= anchor('users/logout','Logout')?>
 </body>
 </html>
