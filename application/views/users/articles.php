@@ -10,7 +10,12 @@
 </head>
 <body>
     <h2>This is the users article page</h2>
-    <!-- The above line the html form tag with its argument is the action path -->
+    <!-- Accessing the flasdata key here  -->
+    <?php if($abhi = $this->session->flashdata('Login Failed')){?> 
+        <h2 style="color:red;"><?= $abhi ?></h2>
+        <?php  }?> 
+        
+        <!-- The above line the html form tag with its argument is the action path -->
     <?php echo form_open('users/abhi')?> 
 
     <!-- The above line render the html input tag with the argument is the associtive array with the key is the attrubute and the value is the its value -->

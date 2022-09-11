@@ -8,7 +8,7 @@
         // }
 
         public function index(){
-           
+            $this->load->library('session');
             // $this->__construct();
             // print_r(base_url('abhishek'));
             echo "This is the index function of the user class";
@@ -17,7 +17,7 @@
         }
 
         public function abhi(){
-            $this->load->library('form_validation','fv');
+            $this->load->library('form_validation');
 
             // The first argument is the name field of the input tag you can target the field value and second argument is the conventional name for your understanding and third is the rules multiple rules added by the | symbol
 
@@ -28,6 +28,7 @@
             $this->form_validation->set_error_delimiters('<div style = "color:red;">','</div>');
 
             if($this->form_validation->run()){
+                
                 // echo "Form validate successful";
 
                 // Here Getting the post values
@@ -46,15 +47,19 @@
                 }
                 else{
                     echo "Details Not Matched";
+                    // Key and value combination you can user this key to the view to display the message
+                    $this->load->library('session');
+                    $this->session->set_flashdata('Login Failed','Invalid Username Or Password');
+                    redirect('/users');
                 }
 
-            }
-            else{
-                $this->load->view('users/articles');
-            }
-                               
-
         }
+        else{
+            // echo "abhi";
+             $this->load->library('session');
+             $this->load->view('users/articles');
+        }
+    }
 
         public function welcome(){
             $this->load->library('session');
@@ -70,5 +75,3 @@
             return redirect('users');
         }
     }
-
-?>
