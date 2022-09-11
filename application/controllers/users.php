@@ -9,9 +9,12 @@
 
         public function index(){
             $this->load->library('session');
+            if($this->session->userdata('id')){
+                redirect('users/welcome');
+            }
             // $this->__construct();
             // print_r(base_url('abhishek'));
-            echo "This is the index function of the user class";
+            // echo "This is the index function of the user class";
             $this->load->helper('form');
             $this->load->view('users/articles');
         }
