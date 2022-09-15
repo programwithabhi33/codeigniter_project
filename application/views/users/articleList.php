@@ -23,6 +23,9 @@
             <?php }?>
         </table>
     <?php  else:
+        // $abhi = "Abhishek";
+        // You can also write the php variables inside a string also like below
+        // echo "No articles Found {$abhi}";
         echo "No articles Found"; ?>
     <?php endif; ?>
 
