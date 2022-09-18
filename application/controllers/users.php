@@ -1,6 +1,6 @@
 <?php
 include_once(APPPATH . 'core/AdminController.php');
-class Users extends MY_controller
+class Users extends AdminController
 {
     // // When you define this class constructor you have to call the ci_controller constructor to acces the super object 
     public function __construct(){
